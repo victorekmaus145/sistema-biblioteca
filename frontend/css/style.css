@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* HEADER */
+header {
+    background: #2c3e50;
+    color: white;
+    padding: 25px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+nav button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* SECTIONS */
+.secao {
+    display: none;
+    padding: 30px;
+    min-height: 400px;
+}
+
+.secao.ativa {
+    display: block;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+/* LISTA DE LIVROS */
+.botoes {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.botoes button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.botoes button:hover {
+    background: #219a52;
+}
+
+.lista {
+    display: grid;
+    gap: 15px;
+}
+
+.item-livro {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.item-livro:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.info-livro h3 {
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.info-livro p {
+    color: #666;
+    margin: 2px 0;
+}
+
+.status {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.disponivel {
+    background: #d4edda;
+    color: #155724;
+}
+
+.indisponivel {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* FORMULÁRIOS */
+.formulario {
+    display: grid;
+    gap: 15px;
+    max-width: 500px;
+}
+
+.formulario input, .formulario select {
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.formulario input:focus, .formulario select:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.formulario button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.formulario button:hover {
+    background: #2980b9;
+}
+
+/* MENSAGENS */
+.mensagem {
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.sucesso {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.erro {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* EMPRÉSTIMOS */
+.emprestimo-form, .emprestimos-ativos {
+    margin-bottom: 30px;
+}
+
+.emprestimos-ativos h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* LOADING */
+.carregando {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+        border-radius: 10px;
+    }
+    
+    nav {
+        flex-direction: column;
+    }
+    
+    .item-livro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .botoes {
+        flex-direction: column;
+    }
+}

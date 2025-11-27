@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Biblioteca</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Sistema Biblioteca</h1>
+            <nav>
+                <button onclick="mostrarSecao('livros')">📖 Livros</button>
+                <button onclick="mostrarSecao('cadastrar')">➕ Cadastrar</button>
+                <button onclick="mostrarSecao('emprestimos')">🔄 Empréstimos</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- SEÇÃO: LISTA DE LIVROS -->
+            <section id="livros" class="secao ativa">
+                <h2>📚 Todos os Livros</h2>
+                <div class="botoes">
+                    <button onclick="carregarLivros()">🔄 Atualizar Lista</button>
+                    <button onclick="carregarLivrosDisponiveis()">✅ Livros Disponíveis</button>
+                </div>
+                <div id="lista-livros" class="lista">
+                    <!-- Livros carregados via JavaScript -->
+                </div>
+            </section>
+
+            <!-- SEÇÃO: CADASTRAR LIVRO -->
+            <section id="cadastrar" class="secao">
+                <h2>📝 Cadastrar Novo Livro</h2>
+                <form id="form-livro" class="formulario">
+                    <input type="text" id="titulo" placeholder="Título do livro" required>
+                    <input type="text" id="autor" placeholder="Autor" required>
+                    <input type="number" id="ano" placeholder="Ano de publicação">
+                    <input type="text" id="isbn" placeholder="ISBN">
+                    <button type="submit">💾 Salvar Livro</button>
+                </form>
+                <div id="mensagem" class="mensagem"></div>
+            </section>
+
+            <!-- SEÇÃO: EMPRÉSTIMOS -->
+            <section id="emprestimos" class="secao">
+                <h2>🔄 Gerenciar Empréstimos</h2>
+                <div class="emprestimo-form">
+                    <h3>Novo Empréstimo</h3>
+                    <form id="form-emprestimo" class="formulario">
+                        <select id="select-usuario" required>
+                            <option value="">Selecione um usuário</option>
+                        </select>
+                        <select id="select-livro" required>
+                            <option value="">Selecione um livro</option>
+                        </select>
+                        <button type="submit">📥 Registrar Empréstimo</button>
+                    </form>
+                </div>
+                <div class="emprestimos-ativos">
+                    <h3>Empréstimos Ativos</h3>
+                    <div id="lista-emprestimos">
+                        <!-- Empréstimos carregados via JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
+
